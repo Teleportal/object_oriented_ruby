@@ -5,35 +5,40 @@
 # puts "The #{item_1[:name]} only comes in #{item_1[:color]}, and it costs #{item_1[:price]} dollars."
 
 class Item
-  def initialize(input_name, input_color, input_price, input_availability)
-    @name = input_name
-    @color = input_color
-    @price = input_price
-    @available = input_availability
+  attr_reader :name, :color, :price, :available
+  attr_writer :available
+
+  def initialize(input_attributes)
+    @name = input_attributes[:name]
+    @color = input_attributes[:color]
+    @price = input_attributes[:price]
+    @available = input_attributes[:available]
   end
 
-  def name
-    @name
-  end
-  def color
-    @color
-  end
+  # def name
+  #   @name
+  # end
+  # def color
+  #   @color
+  # end
 
-  def price
-    @price
-  end
+  # def price
+  #   @price
+  # end
 
-  def available
-    @available
-  end
+  # def available
+  #   @available
+  # end
 
-  def available=(new_availability)
-    @available = new_availability
-  end
+  # def available=(new_availability)
+  #   @available = new_availability
+  # end
+
+  # The above commented lines still technically exist, but are instead being created by attr_reader and attr_writer
 
 end
 
-item_1 = Item.new("Gameboy", "yellow", 99, false)
+item_1 = Item.new(name: "gameboy", color: "yellow", price: 99, available: false)
 
 puts item_1.name
 puts item_1.color
