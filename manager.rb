@@ -11,6 +11,7 @@ class Employee
 
   def print_info
     puts "#{first_name} #{last_name} makes #{salary} a year."
+    puts "\n"
   end
 
   def give_annual_raise
@@ -46,8 +47,9 @@ class Manager < Employee
     super
     puts "#{first_name} #{last_name} supervises:"
     @employees.each do |employee|
-      puts "#{employee.first_name} #{employee.last_name}"
+      puts "  #{employee.first_name} #{employee.last_name}"
     end
+    puts "\n"
   end
 
   def send_report

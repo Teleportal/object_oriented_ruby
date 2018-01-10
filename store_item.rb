@@ -40,6 +40,21 @@ end
 
 item_1 = Item.new(name: "gameboy", color: "yellow", price: 99, available: false)
 
-puts item_1.name
-puts item_1.color
-puts item_1.price
+# puts item_1.name
+# puts item_1.color
+# puts item_1.price
+
+class Food < Item
+  attr_reader :shelf_life
+
+  def initialize(input_attributes)
+    super
+    @shelf_life = input_attributes[:shelf_life]
+  end
+
+end
+
+food = Food.new(name: "Mountain Dew", color: "green", price: 2, available: true, shelf_life: 7)
+
+puts food.name
+puts food.shelf_life
